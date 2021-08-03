@@ -12,10 +12,10 @@ The pictures below are Original Frame / Binarize HSV Frame / Bounded Frame.
 ![can_labeling](https://user-images.githubusercontent.com/53277342/127990657-58d8b90b-b5ce-4e0e-8262-e0b65bd096dd.gif)
 
 ## Clip Labeling
-![clip_labeling](https://user-images.githubusercontent.com/53277342/127996264-26230c3e-206e-43b0-88b4-5da282803f37.gif)
+![clip_labeling](https://user-images.githubusercontent.com/53277342/127997042-1c71bb70-59c3-4bb6-ad86-df3c5ca74ff1.gif)
 
 ## Key Labeling
-![key_labeling](https://user-images.githubusercontent.com/53277342/127996239-983f77ef-e484-466e-8670-563e74bae394.gif)
+![key_labeling](https://user-images.githubusercontent.com/53277342/127997033-c1a857aa-4c18-438e-ab60-6ba06aa9f247.gif)
 
 ## Pen Labeling
 ![pen_labeling](https://user-images.githubusercontent.com/53277342/127990799-88159659-a847-423b-a0c7-30d9bc665b98.gif)

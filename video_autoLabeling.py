@@ -11,7 +11,6 @@ def main():
         class_name = ['pet', 'pen', 'mouse', 'paper_box', 'key', 'clip', 'vinyl', 'stick_vinyl', 'can']
         class_idx = int(video_folder[1])
         print(video_folder)
-        print(os.listdir(video_dir))
 
         '''
         Done 12
@@ -70,15 +69,13 @@ def main():
                      '01bluePen_light': 0, '01greenPen': 1000, '02mouse': 999999, '03post': 10000, '03seviz': 20000, '03starbucks': 30000, '04key': 2000, '05clip': 800,
                     '06vinyl': 50000, '07coffeeStick': 5000, '07coffeeStick_light': 5000, '07iceteaStick': 5000, '08colacan': 20000, '08spritecan': 20000, '08spritecan_light': 20000}
         max_area = {'00pet': 10000, '01blackMarker': 40000, '01blackPen': 10000, '01blackSharp': 10000, '01bluePen': 40000,
-                     '01bluePen_light': 40000, '01greenPen': 30000, '02mouse': 10000, '03post': 200000, '03seviz': 100000, '03starbucks': 100000, '04key': 5000,
+                     '01bluePen_light': 40000, '01greenPen': 30000, '02mouse': 10000, '03post': 200000, '03seviz': 100000, '03starbucks': 100000, '04key': 10000,
                     '05clip': 10000, '06vinyl': 500000, '07coffeeStick': 100000, '07coffeeStick_light': 100000, '07iceteaStick': 100000, '08colacan': 100000,
                     '08spritecan': 40000, '08spritecan_light': 40000}
 
         for video_idx, video in enumerate(os.listdir(video_dir + '/' + video_folder)):
             print(video)
-            print(video_idx)
             cap = cv.VideoCapture(video_dir + '/' + video_folder + '/' + video)
-            bgs = cv.createBackgroundSubtractorKNN(dist2Threshold=500, detectShadows=False)
             prev_time = 0
             FPS = 1000
             write_image_dir = 'D:/study/python/OpenCV_Labeling/images/' + str(class_idx)
@@ -108,8 +105,6 @@ def main():
                     hsv_binary = cv.inRange(hsv, (hsv_h_min[video_folder], hsv_s_min[video_folder], hsv_v_min[video_folder]),
                                             (hsv_h_max[video_folder], hsv_s_max[video_folder], hsv_v_max[video_folder]))
                     hsv_out = cv.bitwise_and(hsv, hsv, mask=hsv_binary)
-                    result = cv.cvtColor(hsv_out, cv.COLOR_HSV2BGR)
-                    # fgmask = bgs.apply(result)
 
                     contours, hierarchy = cv.findContours(hsv_binary, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
                     mask_color = cv.cvtColor(hsv_binary, cv.COLOR_GRAY2BGR)
@@ -123,10 +118,7 @@ def main():
                         if area < (w * h) and x > 5 and y > 5:
                             max_x, max_y, max_w, max_h = cv.boundingRect(contour)
                             area = w * h
-                    #
-                    # if max_x >= 0 and max_y >= 0 and max_x + max_w < mask_color.shape[1] \
-                    #         and max_y + max_h < mask_color.shape[0] \
-                    #         and min_area[video_folder] < area < max_area[video_folder]:
+
                     if min_area[video_folder] < area < max_area[video_folder] and 5 < max_y:
                         cv.rectangle(mask_max_color, (max_x, max_y), (max_x + max_w, max_y + max_h), (0, 255, 0), 2)
 

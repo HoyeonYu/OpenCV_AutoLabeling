@@ -1,35 +1,45 @@
+import sys
+
 import cv2
 
-src = cv2.imread("beltImage/sprite.png", cv2.IMREAD_COLOR)
-src = cv2.pyrDown(src)
-hsv = cv2.cvtColor(src, cv2.COLOR_BGR2HSV)
+src = cv2.imread('beltImage/starbucksBox.png')
 
-cv2.namedWindow("TrackBar Windows")
-cv2.createTrackbar("H-Low1", "TrackBar Windows", 0, 180, lambda x: x)
-cv2.createTrackbar("H-High1", "TrackBar Windows", 0, 180, lambda x: x)
-cv2.createTrackbar("H-Low2", "TrackBar Windows", 0, 180, lambda x: x)
-cv2.createTrackbar("H-High2", "TrackBar Windows", 0, 180, lambda x: x)
-cv2.createTrackbar("S-Th", "TrackBar Windows", 0, 255, lambda x: x)
-cv2.createTrackbar("V-Th", "TrackBar Windows", 0, 255, lambda x: x)
-cv2.setTrackbarPos("H-Low1", "TrackBar Windows", 0)
-cv2.setTrackbarPos("H-High1", "TrackBar Windows", 5)
-cv2.setTrackbarPos("H-Low2", "TrackBar Windows", 170)
-cv2.setTrackbarPos("H-High2", "TrackBar Windows", 180)
-cv2.setTrackbarPos("S-Th", "TrackBar Windows", 100)
-cv2.setTrackbarPos("V-Th", "TrackBar Windows", 100)
+if src is None:
+    print('Image load failed!')
+    sys.exit()
 
-while cv2.waitKey(1) != ord('q'):
-    hsv1_low = cv2.getTrackbarPos("H-Low1", "TrackBar Windows")
-    hsv1_high = cv2.getTrackbarPos("H-High1", "TrackBar Windows")
-    hsv2_low = cv2.getTrackbarPos("H-Low2", "TrackBar Windows")
-    hsv2_high = cv2.getTrackbarPos("H-High2", "TrackBar Windows")
-    hsv_s = cv2.getTrackbarPos("S-Th", "TrackBar Windows")
-    hsv_v = cv2.getTrackbarPos("V-Th", "TrackBar Windows")
-    lower_hsv = cv2.inRange(hsv, (hsv1_low, hsv_s, hsv_v), (hsv1_high, 255, 255))
-    upper_hsv = cv2.inRange(hsv, (hsv2_low, hsv_s, hsv_v), (hsv2_high, 255, 255))
-    added_hsv = cv2.addWeighted(lower_hsv, 1.0, upper_hsv, 1.0, 0.0)
-    hsv_out = cv2.bitwise_and(hsv, hsv, mask=added_hsv)
-    result = cv2.cvtColor(hsv_out, cv2.COLOR_HSV2BGR)
-    cv2.imshow("TrackBar Windows", result)
+src = cv2.resize(src, dsize=(500, 700))
+src_hsv = cv2.cvtColor(src, cv2.COLOR_BGR2HSV)  # BGR -> HSV 로 변경(색상 검출에 효율적)
+
+
+# 트랙바 콜백 함수 생성
+def on_trackbar(pos):
+    hmin = cv2.getTrackbarPos('H_min', 'dst')
+    hmax = cv2.getTrackbarPos('H_max', 'dst')
+
+    smin = cv2.getTrackbarPos('S_min', 'dst')
+    smax = cv2.getTrackbarPos('S_max', 'dst')
+
+    vmin = cv2.getTrackbarPos('V_min', 'dst')
+    vmax = cv2.getTrackbarPos('V_max', 'dst')
+
+    dst = cv2.inRange(src_hsv, (hmin, smin, vmin), (hmax, smax, vmax))
+    cv2.imshow('dst', dst)
+
+
+cv2.namedWindow('dst')
+
+# 트랙바 콜백 함수 등록
+cv2.createTrackbar('H_min', 'dst', 0, 255, on_trackbar)
+cv2.createTrackbar('H_max', 'dst', 0, 255, on_trackbar)
+
+cv2.createTrackbar('S_min', 'dst', 0, 255, on_trackbar)
+cv2.createTrackbar('S_max', 'dst', 0, 255, on_trackbar)
+
+cv2.createTrackbar('V_min', 'dst', 0, 255, on_trackbar)
+cv2.createTrackbar('V_max', 'dst', 0, 255, on_trackbar)
+on_trackbar(0)
+
+cv2.waitKey()
 
 cv2.destroyAllWindows()

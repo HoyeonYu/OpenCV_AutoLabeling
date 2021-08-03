@@ -104,11 +104,10 @@ def main():
                     hsv = cv.cvtColor(frame, cv.COLOR_BGR2HSV)
                     hsv_binary = cv.inRange(hsv, (hsv_h_min[video_folder], hsv_s_min[video_folder], hsv_v_min[video_folder]),
                                             (hsv_h_max[video_folder], hsv_s_max[video_folder], hsv_v_max[video_folder]))
-                    hsv_out = cv.bitwise_and(hsv, hsv, mask=hsv_binary)
 
                     contours, hierarchy = cv.findContours(hsv_binary, cv.RETR_LIST, cv.CHAIN_APPROX_SIMPLE)
                     mask_color = cv.cvtColor(hsv_binary, cv.COLOR_GRAY2BGR)
-                    mask_max_color = frame
+                    mask_max_color = frame.copy()
 
                     max_x, max_y, max_w, max_h, area = 0, 0, 0, 0, 0
 

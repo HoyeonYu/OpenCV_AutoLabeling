@@ -11,8 +11,11 @@ The pictures below are Original Frame / Binarize HSV Frame / Bounded Frame.
 ## Can Labeling
 ![can_labeling](https://user-images.githubusercontent.com/53277342/127990657-58d8b90b-b5ce-4e0e-8262-e0b65bd096dd.gif)
 
-## Metal Labeling
-![metal_labeling](https://user-images.githubusercontent.com/53277342/127990722-47755f9e-6c5c-4997-bf17-84270ed9f3cd.gif)
+## Clip Labeling
+![clip_labeling](https://user-images.githubusercontent.com/53277342/127996264-26230c3e-206e-43b0-88b4-5da282803f37.gif)
+
+## Key Labeling
+![key_labeling](https://user-images.githubusercontent.com/53277342/127996239-983f77ef-e484-466e-8670-563e74bae394.gif)
 
 ## Pen Labeling
 ![pen_labeling](https://user-images.githubusercontent.com/53277342/127990799-88159659-a847-423b-a0c7-30d9bc665b98.gif)

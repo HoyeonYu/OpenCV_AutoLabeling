@@ -2,7 +2,7 @@
 
 This tool is developed for labeling object of video automatically by ranging HSV values.  
 Each HSV values of objects is decided by checking trackbar manually.  
-When frame of video labelled properly, "original_frame.jpg", "label_data.txt", "bounded_frame.jpg" will be saved. 
+When frame of video labelled properly, "original_frame.jpg", "label_data.txt", "bounded_frame.jpg" will be saved.  
 The pictures below are Original Frame / Binarize HSV Frame / Bounded Frame.  
 
 ## Box Labeling

@@ -2,26 +2,29 @@
 
 This tool is developed for labeling object of video automatically by ranging HSV values.  
 Each HSV values of objects is decided by checking trackbar manually.  
+
 When frame of video labelled properly, "original_frame.jpg", "label_data.txt", "bounded_frame.jpg" will be saved.  
+"original_frame.jpg" and "label_data.txt" can be used for YOLOv4 custom data.  
+
 The pictures below are Original Frame / Binarized HSV Frame / Bounded Frame.  
 
-## Box Labeling
-![box_labeling](https://user-images.githubusercontent.com/53277342/127990587-4b5f29cb-f2b1-4a65-a564-9b5db1dbbbe0.gif)
+## Box
+![ezgif com-gif-maker (3)](https://user-images.githubusercontent.com/53277342/128007371-063d6577-780e-4df4-bc63-bd819cf87b7c.gif)
 
-## Can Labeling
-![can_labeling](https://user-images.githubusercontent.com/53277342/127990657-58d8b90b-b5ce-4e0e-8262-e0b65bd096dd.gif)
+## Can
+![ezgif com-gif-maker (4)](https://user-images.githubusercontent.com/53277342/128007439-9ad1fd6a-6397-4356-b4b6-c1a3981682f7.gif)
 
-## Clip Labeling
-![clip_labeling](https://user-images.githubusercontent.com/53277342/127997042-1c71bb70-59c3-4bb6-ad86-df3c5ca74ff1.gif)
+## Clip
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/53277342/128007519-af177dda-c981-4166-ada2-1534e0343f47.gif)
 
-## Key Labeling
-![key_labeling](https://user-images.githubusercontent.com/53277342/127997033-c1a857aa-4c18-438e-ab60-6ba06aa9f247.gif)
+## Key
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/53277342/128007594-f01422a6-2253-4b7e-b82e-775f3b91e7a5.gif)
 
-## Pen Labeling
-![pen_labeling](https://user-images.githubusercontent.com/53277342/127990799-88159659-a847-423b-a0c7-30d9bc665b98.gif)
+## Pen
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/53277342/128007769-3f9d21d5-1854-462d-bfd5-28c76d1897c2.gif)
 
-## Stick Vinyl Labeling
-![stick_vinyl_labeling](https://user-images.githubusercontent.com/53277342/127990882-4863c0e2-6aed-4a80-a2d1-9c5a18283122.gif)
+## Stick Vinyl
+![ezgif com-gif-maker](https://user-images.githubusercontent.com/53277342/128007883-7c0c8476-52d7-4546-afc8-92c8a1abe480.gif)
 
-## Vinyl Labeling
-![vinyl_labeling](https://user-images.githubusercontent.com/53277342/127991295-048f051f-ff31-4792-b25a-7d9b0612580a.gif)
+## Vinyl
+![ezgif com-gif-maker (1)](https://user-images.githubusercontent.com/53277342/128008107-169231d3-e96e-45c7-8e85-8ede08fb9b7e.gif)

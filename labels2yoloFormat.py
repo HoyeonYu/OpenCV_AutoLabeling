@@ -1,5 +1,4 @@
 import os
-
 import cv2
 
 
@@ -8,7 +7,7 @@ def main():
     read_image_dir = 'D:/study/python/OpenCV_Labeling/images'
     write_label_dir = 'D:/study/python/OpenCV_Labeling/labels_formal'
 
-    for label_folder_idx, label_folder in enumerate(os.listdir(read_label_dir)[1]):
+    for label_folder_idx, label_folder in enumerate(os.listdir(read_label_dir)):
         for file_name in os.listdir(read_label_dir + '/' + label_folder):
             file_name = file_name.split('.txt')[0]
             read_label_file = open(read_label_dir + '/' + label_folder + '/' + file_name + '.txt', 'r')

@@ -65,8 +65,8 @@ def main():
                      '01bluePen_light': 255, '01greenPen': 255, '02mouse': 255, '03post': 255, '03seviz': 255, '03starbucks': 255, '04key': 255, '05clip': 255,
                      '06vinyl': 190, '07coffeeStick': 255, '07coffeeStick_light': 255, '07iceteaStick': 255, '08colacan': 255, '08spritecan': 255, '08spritecan_light': 255}
 
-        min_area = {'00pet': 999999, '01blackMarker': 999999, '01blackPen': 999999, '01blackSharp': 999999, '01bluePen': 0,
-                     '01bluePen_light': 0, '01greenPen': 1000, '02mouse': 999999, '03post': 10000, '03seviz': 20000, '03starbucks': 30000, '04key': 2000, '05clip': 800,
+        min_area = {'00pet': 999999, '01blackMarker': 999999, '01blackPen': 999999, '01blackSharp': 999999, '01bluePen': 3000,
+                     '01bluePen_light': 3000, '01greenPen': 1000, '02mouse': 999999, '03post': 10000, '03seviz': 20000, '03starbucks': 30000, '04key': 2000, '05clip': 800,
                     '06vinyl': 50000, '07coffeeStick': 5000, '07coffeeStick_light': 5000, '07iceteaStick': 5000, '08colacan': 20000, '08spritecan': 20000, '08spritecan_light': 20000}
         max_area = {'00pet': 10000, '01blackMarker': 40000, '01blackPen': 10000, '01blackSharp': 10000, '01bluePen': 40000,
                      '01bluePen_light': 40000, '01greenPen': 30000, '02mouse': 10000, '03post': 200000, '03seviz': 100000, '03starbucks': 100000, '04key': 10000,

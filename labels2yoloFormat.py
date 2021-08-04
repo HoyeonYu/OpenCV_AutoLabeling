@@ -27,8 +27,8 @@ def main():
 
                 x = int(line.split(' ')[1]) / img_width
                 y = int(line.split(' ')[2]) / img_height
-                w = (int(line.split(' ')[3]) - x) / img_width
-                h = (int(line.split(' ')[4]) - y) / img_height
+                w = (int(line.split(' ')[3]) - int(line.split(' ')[1])) / img_width
+                h = (int(line.split(' ')[4]) - int(line.split(' ')[2])) / img_height
 
                 write_label_file.write('%s %f %f %f %f' % (label_folder, x, y, w, h))
 
